@@ -1,3 +1,3 @@
-export interface SearchFormData {
+export interface SearchData {
   text: string;
 }

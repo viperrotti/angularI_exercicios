@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SearchFormData } from 'src/app/models/search-data.models';
+import { SearchData } from 'src/app/models/search-data.models';
 
 @Component({
   selector: 'app-header',
@@ -7,20 +7,18 @@ import { SearchFormData } from 'src/app/models/search-data.models';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() public sendForm: EventEmitter<SearchFormData> = new EventEmitter<SearchFormData>();
+  @Output() public searchEmmiter: EventEmitter<string> = new EventEmitter<string>();
 
 
-  public formData: SearchFormData = {
-    text: ''
-  };
+  public value = "";
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  public submitForm(): void {
-    this.sendForm.emit(this.formData);
+  public onSearchSubmitted(): void {
+    this.searchEmmiter.emit(this.value);
   }
 
 
