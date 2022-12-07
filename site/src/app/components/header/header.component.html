@@ -37,8 +37,9 @@
           type="search"
           placeholder="Search"
           aria-label="Search"
+          [(ngModel)]="formData.text"
         />
-        <a class="btn btn-outline-light" href="#"
+        <a class="btn btn-outline-light" href="#" (click)="submitForm()"
           >Search</a
         >
       </form>
